@@ -1,0 +1,10 @@
+#!/bin/bash 
+#
+# chkconfig: 235 80 20
+
+. /etc/init.d/functions 
+
+SONAR_SCRIPT=/opt/sonar/bin/<%=node['sonar']['os_kernel']%>/sonar.sh
+
+
+${SONAR_SCRIPT} $*

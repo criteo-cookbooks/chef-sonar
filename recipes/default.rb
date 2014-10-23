@@ -36,9 +36,18 @@ link "/opt/sonar" do
   to "/opt/sonar-#{node['sonar']['version']}"
 end
 
+
+template "sonar_init_script" do
+  path "/etc/init.d/sonar"
+  source "init_script.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
 service "sonar" do
-  init_command "sh /opt/sonar/bin/#{node['sonar']['os_kernel']}/sonar.sh"
-  action :start
+  action [:enable, :start]
+  subscribes :restart, resources(:template => "sonar_init_script")
 end
 
 template "sonar.properties" do
