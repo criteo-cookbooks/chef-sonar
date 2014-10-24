@@ -1,9 +1,9 @@
 # General settings
 default['sonar']['dir']                    = "/opt/sonar"
-default['sonar']['version']                = "2.11"
-default['sonar']['checksum']               = "9d05e25ca79c33d673004444d89c8770"
-default['sonar']['os_kernel']              = "linux-x86-32"
-default['sonar']['mirror']                 = "http://dist.sonar.codehaus.org"
+default['sonar']['version']                = "4.5"
+default['sonar']['checksum']               = "a39a52a29344b422029bd8b04d1cb84d"
+default['sonar']['os_kernel']              = "linux-x86-64"
+default['sonar']['mirror']                 = "http://dist.sonar.codehaus.org/"
 
 # Web settings
 # The default listen port is 9000, the default context path is / and Sonar listens by default to all network interfaces : '0.0.0.0'.

@@ -27,7 +27,7 @@ attribute "sonar/dir",
 attribute "sonar/version",
   :display_name => "Sonar version",
   :description => "The version will be used to download the sources for the given version from 'http://dist.sonar.codehaus.org/sonar-#version#.zip'",
-  :default => "2.11"
+  :default => "4.5"
 
 attribute "sonar/checksum",
   :display_name => "MD5 Checksum",
@@ -36,4 +36,9 @@ attribute "sonar/checksum",
 attribute "sonar/os_kernel",
   :display_name => "System architecture",
   :description => "Choose which CPU your running sonar on. This modifies the start-script to your architecture.",
-  :default => "linux-x86-32"
+  :default => "linux-x86-64"
+
+attribute "sonar/mirror",
+  :display_name => "Sonar mirror",
+  :description => "The Sonar mirror for distribution",
+  :default => "http://dist.sonar.codehaus.org"
