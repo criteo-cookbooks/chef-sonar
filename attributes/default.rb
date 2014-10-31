@@ -34,3 +34,5 @@ default['sonar']['logfile_maxsize']        = "0"
 default['sonar']['syslog_loglevel']        = "NONE"
 
 default['sonar']['options']                = {}
+
+default['mysql']['bind_address'] = '127.0.0.1'
