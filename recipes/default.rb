@@ -52,21 +52,24 @@ end
 
 template "sonar.properties" do
   path "/opt/sonar/conf/sonar.properties"
-  source "sonar.properties.erb"
+  source "properties.erb"
   owner "root"
   group "root"
   mode 0644
   variables(
-    :options => node['sonar']['options']
+    :options => node['sonar']['properties']
   )
   notifies :restart, resources(:service => "sonar")
 end
 
 template "wrapper.conf" do
   path "/opt/sonar/conf/wrapper.conf"
-  source "wrapper.conf.erb"
+  source "properties.erb"
   owner "root"
   group "root"
   mode 0644
+  variables(
+    :options => node['sonar']['wrapper_properties']
+  )
   notifies :restart, resources(:service => "sonar")
 end

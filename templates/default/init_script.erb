@@ -4,6 +4,11 @@
 
 . /etc/init.d/functions 
 
+# Unset some ruby gem variable in order to avoid conflict between 
+# sonar ruby and chef ruby.
+unset GEM_PATH
+unset GEM_HOME
+
 SONAR_SCRIPT=/opt/sonar/bin/<%=node['sonar']['os_kernel']%>/sonar.sh
 
 
