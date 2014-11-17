@@ -15,7 +15,7 @@ recipe           "sonar::proxy_nginx", "Includes the recipe to install Nginx-Web
   supports os
 end
 
-%w{ java mysql }.each do |cb|
+%w{ java mysql nginx }.each do |cb|
   depends cb
 end
 
