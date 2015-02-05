@@ -36,6 +36,7 @@ link "/opt/sonar" do
   to "/opt/sonarqube-#{node['sonar']['version']}"
 end
 
+service "sonar"
 
 template "sonar_init_script" do
   path "/etc/init.d/sonar"
@@ -43,11 +44,7 @@ template "sonar_init_script" do
   owner "root"
   group "root"
   mode "0755"
-end
-
-service "sonar" do
-  action [:enable, :start]
-  subscribes :restart, resources(:template => "sonar_init_script")
+  notifies :restart, resources(:service => "sonar")
 end
 
 template "sonar.properties" do
